@@ -14,4 +14,6 @@ public class HealthController {
 	public String getVersion() {
 		return "Application is up and running with "+version;
 	}
+	
+	
 }
