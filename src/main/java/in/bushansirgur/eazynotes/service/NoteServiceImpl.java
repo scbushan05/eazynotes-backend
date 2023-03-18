@@ -19,4 +19,9 @@ public class NoteServiceImpl implements NotesService {
 		return noteRepository.findAll();
 	}
 
+	@Override
+	public Note saveNote(Note note) {
+		return noteRepository.save(note);
+	}
+
 }
