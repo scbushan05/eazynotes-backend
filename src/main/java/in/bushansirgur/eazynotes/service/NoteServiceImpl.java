@@ -24,4 +24,33 @@ public class NoteServiceImpl implements NotesService {
 		return noteRepository.save(note);
 	}
 
+	@Override
+	public Note readNote(Long id) {
+		return noteRepository.findById(id)
+			.orElseThrow(() -> new RuntimeException("Note is not present for the id "+id));
+	}
+
+	@Override
+	public void removeNote(Long id) {
+		Note existingNote = readNote(id);
+		noteRepository.delete(existingNote);
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
